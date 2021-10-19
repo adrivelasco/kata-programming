@@ -40,11 +40,4 @@ const theme = extendTheme({
   config: {
     initialColorMode: 'dark',
   },
-  styles: {
-    global: {
-      body: {
-        // bg: "gray.100",
-      },
-    },
-  },
 });

@@ -1,6 +1,6 @@
 import { Icon, IconProps } from '@chakra-ui/react';
-import { AiOutlineExperiment } from 'react-icons/ai';
+import { MdInvertColors } from 'react-icons/md';
 
 export const PotionIcon = (props: IconProps) => (
-  <Icon as={AiOutlineExperiment} {...props} />
+  <Icon as={MdInvertColors} {...props} />
 );

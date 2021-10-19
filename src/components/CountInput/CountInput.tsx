@@ -13,6 +13,8 @@ export const CountInput = ({ value = 0, color, ...props }: CountInputProps) => {
       <Box
         bg={getBgLine(color)}
         height={1}
+        borderBottom="1px solid"
+        borderColor={getBgBorderLine(color)}
         mb={2}
         rounded="md"
         width={getWidthLine(value)}
@@ -40,6 +42,8 @@ export const CountInput = ({ value = 0, color, ...props }: CountInputProps) => {
 };
 
 const getBgLine = (color: string) => concat(color, '.500');
+const getBgBorderLine = (color: string) => concat(color, '.300');
+
 const getWidthLine = (value: number) => {
   if (value === 0) {
     return '5%';

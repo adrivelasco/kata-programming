@@ -19,12 +19,12 @@ export const Potion = ({ color, ...props }: PotionProps) => (
       justifyContent="center"
       mr={6}
     >
-      <PotionIcon boxSize="10" color={getIconColor(color)} />
+      <PotionIcon boxSize={35} color={getIconColor(color)} />
     </Flex>
     <CountInput color={color} />
   </Flex>
 );
 
-const getIconColor = (color: string) => concat(color, '.100');
-const getBgColor = (color: string) => concat(color, '.500');
-const getBorderColor = (color: string) => concat(color, '.700');
+const getIconColor = (color: string) => concat(color, '.600');
+const getBgColor = (color: string) => concat(color, '.400');
+const getBorderColor = (color: string) => concat(color, '.500');
