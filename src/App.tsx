@@ -1,26 +1,34 @@
-import { ChakraProvider, Box, CSSReset, extendTheme } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  Box,
+  CSSReset,
+  extendTheme,
+  Flex,
+} from '@chakra-ui/react';
 
 import { Potions } from './components/Potions';
 import { Potion } from './components/Potion';
+import { Results } from './components/Results';
 
 export const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <CSSReset />
       <Box
-        width="100%"
         maxWidth={appWidth}
         mx="auto"
-        py={6}
         px={{ base: 4, md: 0 }}
+        py={6}
+        width="100%"
       >
-        <Box as="main">
+        <Flex as="main" pt={12}>
           <Potions>
             {['red', 'green', 'gray', 'yellow', 'blue'].map((color, i) => {
               return <Potion key={i} color={color} />;
             })}
           </Potions>
-        </Box>
+          <Results />
+        </Flex>
       </Box>
     </ChakraProvider>
   );

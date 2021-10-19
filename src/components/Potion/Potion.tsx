@@ -21,7 +21,7 @@ export const Potion = ({ color, ...props }: PotionProps) => (
     >
       <PotionIcon boxSize="10" color={getIconColor(color)} />
     </Flex>
-    <CountInput />
+    <CountInput color={color} />
   </Flex>
 );
 
