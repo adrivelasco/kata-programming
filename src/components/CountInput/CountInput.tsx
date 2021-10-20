@@ -5,22 +5,31 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 export interface CountInputProps extends FlexProps {
   value?: number;
   color: string;
+  onIncrement?: () => void;
+  onDecrease?: () => void;
 }
 
-export const CountInput = ({ value = 0, color, ...props }: CountInputProps) => {
+export const CountInput = ({
+  value = 0,
+  color,
+  onIncrement,
+  onDecrease,
+  ...props
+}: CountInputProps) => {
   return (
     <Box positino="relative" {...props}>
       <Box
         bg={getBgLine(color)}
-        height={1}
         borderBottom="1px solid"
         borderColor={getBgBorderLine(color)}
+        height={1}
         mb={2}
         rounded="md"
+        transition="width 200ms ease"
         width={getWidthLine(value)}
       />
       <Flex position="relative" maxWidth="100%">
-        <Button size="sm" variant="outline">
+        <Button size="sm" variant="outline" onClick={onDecrease}>
           <MinusIcon />
         </Button>
         <Input
@@ -33,7 +42,7 @@ export const CountInput = ({ value = 0, color, ...props }: CountInputProps) => {
           type="number"
           value={value}
         />
-        <Button size="sm" variant="outline">
+        <Button size="sm" variant="outline" onClick={onIncrement}>
           <AddIcon />
         </Button>
       </Flex>

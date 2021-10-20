@@ -1,13 +1,21 @@
 import { concat } from 'ramda';
 import { Flex, FlexProps } from '@chakra-ui/react';
-import { CountInput } from '../CountInput';
+import { CountInput, CountInputProps } from '../CountInput';
 import { PotionIcon } from '../Icon';
 
-export interface PotionProps extends FlexProps {
+export interface PotionProps
+  extends FlexProps,
+    Pick<CountInputProps, 'onIncrement' | 'onDecrease' | 'value'> {
   color: string;
 }
 
-export const Potion = ({ color, ...props }: PotionProps) => (
+export const Potion = ({
+  color,
+  onIncrement,
+  onDecrease,
+  value,
+  ...props
+}: PotionProps) => (
   <Flex position="relative" py={3} alignItems="center" {...props}>
     <Flex
       alignItems="center"
@@ -21,7 +29,12 @@ export const Potion = ({ color, ...props }: PotionProps) => (
     >
       <PotionIcon boxSize={35} color="white" />
     </Flex>
-    <CountInput color={color} />
+    <CountInput
+      color={color}
+      onDecrease={onDecrease}
+      onIncrement={onIncrement}
+      value={value}
+    />
   </Flex>
 );
 
