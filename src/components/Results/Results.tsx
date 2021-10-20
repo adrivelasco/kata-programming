@@ -15,6 +15,7 @@ export interface ResultsProps extends BoxProps {
   onClear?: () => void;
   onCalculateResults?: () => void;
   data?: MostDamagingAttack;
+  enableCalculate?: boolean;
 }
 
 export const Results = ({
@@ -22,6 +23,7 @@ export const Results = ({
   data,
   onCalculateResults,
   onClear,
+  enableCalculate,
   ...props
 }: ResultsProps) => (
   <Flex
@@ -58,7 +60,7 @@ export const Results = ({
             ))}
           </UnorderedList>
           <Text fontWeight="medium" mt={2}>
-            * Total Damage: <strong>{data.totalDamagePct}</strong>
+            Total Damage: <strong>{data.totalDamagePct}</strong>
           </Text>
         </Box>
       )}
@@ -71,10 +73,11 @@ export const Results = ({
       py={{ base: 6, md: 8 }}
     >
       <Button
-        variant="outline"
-        mr={2}
         colorScheme="green"
+        mr={2}
         onClick={onCalculateResults}
+        variant="outline"
+        disabled={!enableCalculate}
       >
         Calculate
       </Button>

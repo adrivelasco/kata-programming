@@ -15,6 +15,8 @@ export const PotionCalculator = (props: FlexProps) => {
     results,
   } = usePotionCalculator();
 
+  const enableCalculate = potions.some(({ quantity }) => quantity > 0);
+
   return (
     <Flex
       alignItems={{ base: 'center', md: 'normal' }}
@@ -38,6 +40,7 @@ export const PotionCalculator = (props: FlexProps) => {
       </Potions>
       <Results
         data={results}
+        enableCalculate={enableCalculate}
         ml={{ base: 0, md: 8 }}
         mt={{ base: 8, md: 0 }}
         onCalculateResults={onCalculateResults}

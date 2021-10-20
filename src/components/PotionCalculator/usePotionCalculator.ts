@@ -1,11 +1,18 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { increment, decrease, RootState, calculate, clear } from '../../store';
+import {
+  increment,
+  decrease,
+  calculate,
+  clear,
+  getPotionsState,
+  getResultsState,
+} from '../../store';
 
 export const usePotionCalculator = () => {
-  const potions = useSelector((state: RootState) => state.potions);
-  const results = useSelector((state: RootState) => state.results);
+  const potions = useSelector(getPotionsState);
+  const results = useSelector(getResultsState);
 
   const dispatch = useDispatch();
 

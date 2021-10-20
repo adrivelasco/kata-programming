@@ -11,8 +11,8 @@ export const Recipes = (props: BoxProps) => (
       following:
     </Text>
     <UnorderedList fontWeight="light" fontSize="small" mt={1}>
-      {items.map((text) => (
-        <ListItem>{text}</ListItem>
+      {items.map((text, i) => (
+        <ListItem key={i}>{text}</ListItem>
       ))}
     </UnorderedList>
   </Box>
