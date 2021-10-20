@@ -19,7 +19,7 @@ export const CountInput = ({ value = 0, color, ...props }: CountInputProps) => {
         rounded="md"
         width={getWidthLine(value)}
       />
-      <Flex position="relative" as="form" maxWidth="100%">
+      <Flex position="relative" maxWidth="100%">
         <Button size="sm" variant="outline">
           <MinusIcon />
         </Button>
