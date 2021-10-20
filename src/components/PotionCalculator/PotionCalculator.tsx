@@ -16,7 +16,13 @@ export const PotionCalculator = (props: FlexProps) => {
   } = usePotionCalculator();
 
   return (
-    <Flex as="main" pt={12} {...props}>
+    <Flex
+      alignItems={{ base: 'center', md: 'normal' }}
+      as="main"
+      flexDirection={{ base: 'column', md: 'row' }}
+      pt={{ base: 0, md: 12 }}
+      {...props}
+    >
       <Potions>
         {potions.map(({ color, quantity }, i) => {
           return (
@@ -31,9 +37,11 @@ export const PotionCalculator = (props: FlexProps) => {
         })}
       </Potions>
       <Results
+        data={results}
+        ml={{ base: 0, md: 8 }}
+        mt={{ base: 8, md: 0 }}
         onCalculateResults={onCalculateResults}
         onClear={onClear}
-        data={results}
       />
     </Flex>
   );

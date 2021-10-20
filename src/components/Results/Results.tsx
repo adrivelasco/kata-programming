@@ -1,4 +1,13 @@
-import { Box, BoxProps, Button, Divider, Flex, Text } from '@chakra-ui/react';
+import {
+  Box,
+  BoxProps,
+  Button,
+  Divider,
+  Flex,
+  Text,
+  UnorderedList,
+  ListItem,
+} from '@chakra-ui/react';
 
 import { MostDamagingAttack } from '../../types';
 
@@ -20,14 +29,12 @@ export const Results = ({
     borderRadius="round"
     flex={1}
     flexDirection="column"
-    ml={{ base: 0, md: 8 }}
-    {...props}
-    px={8}
-    py={8}
+    px={{ base: 6, md: 8 }}
+    py={{ base: 6, md: 8 }}
     rounded="md"
     {...props}
   >
-    <Box flex={1} mb={8}>
+    <Box flex={1} mb={{ base: 6, md: 8 }}>
       {children}
       <Text fontSize="large" fontWeight="bold" mb={2}>
         The Most Damaging Attacks
@@ -42,12 +49,14 @@ export const Results = ({
           <Text fontWeight="medium" textDecoration="underline" mb={1}>
             Combination:
           </Text>
-          {data.attacks.map(({ potions, damagePct }, i) => (
-            <Text key={i} fontWeight="light">
-              <strong>Attack {i + 1}:</strong> Using {potions.length} potions
-              deals {damagePct}% damage
-            </Text>
-          ))}
+          <UnorderedList>
+            {data.attacks.map(({ potions, damagePct }, i) => (
+              <ListItem key={i} fontWeight="light">
+                <strong>Attack {i + 1}:</strong> Using {potions.length} potions
+                deals {damagePct}% damage
+              </ListItem>
+            ))}
+          </UnorderedList>
           <Text fontWeight="medium" mt={2}>
             * Total Damage: <strong>{data.totalDamagePct}</strong>
           </Text>
@@ -55,7 +64,12 @@ export const Results = ({
       )}
     </Box>
     <Divider />
-    <Flex alignItems="center" justifyContent="center" mr={5} py={8}>
+    <Flex
+      alignItems="center"
+      justifyContent="center"
+      mr={5}
+      py={{ base: 6, md: 8 }}
+    >
       <Button
         variant="outline"
         mr={2}
