@@ -36,8 +36,6 @@ export const usePotionCalculator = () => {
     [dispatch],
   );
 
-  console.log(results);
-
   return {
     clear,
     onCalculateResults: handleOnCalculateResults,

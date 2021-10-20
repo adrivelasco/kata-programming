@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Kata Programming
+
+author @ Adrián Velasco
+https://kata-programming.vercel.app
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+- You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- To learn React, check out the [React documentation](https://reactjs.org/).
 
-In the project directory, you can run:
+![Preview](https://personal-images-hub.s3.us-east-1.amazonaws.com/Screen%20Shot%202021-10-20%20at%202.38.13%20AM.png)
 
-### `yarn start`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [TypeScript](https://github.com/microsoft/TypeScript)
+- [React](https://reactjs.org)
+- [Redux](https://github.com/reduxjs/redux) + [TKL](https://redux-toolkit.js.org/) - State Management
+- [Chakra-UI](https://chakra-ui.com/) - UI Library
+- [Jest](https://jestjs.io/) / [Testing Library](https://testing-library.com/) - Unit Testing
 
-### `yarn test`
+## Notes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The algorithm to resolve the combination of attacks given a list of potions is in the file:`s rc/algorithm/getTheMostDamagingAttacks.ts`
+- All the logic is isolated in a custom hook, `usePotionCalculator.ts` and used in the `PotionCalculator` component
+- I wrote unit tests to cover the algorithm functionality and the redux store
+- It's mobile responsive
 
-### `yarn build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the project in **development** mode:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+yarn install
+yarn start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Then, open http://localhost:3000 in your browser.
+```
 
-### `yarn eject`
+Run **tests**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+yarn test
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Builds the app for **production** to the `build` folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+yarn build
+```
