@@ -76,7 +76,7 @@ export const Results = ({
         colorScheme="green"
         onClick={onCalculateResults}
       >
-        Get Optimal Attacks
+        Calculate
       </Button>
       <Button variant="outline" onClick={onClear}>
         Clear
