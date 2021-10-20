@@ -29,7 +29,12 @@ export const CountInput = ({
         width={getWidthLine(value)}
       />
       <Flex position="relative" maxWidth="100%">
-        <Button size="sm" variant="outline" onClick={onDecrease}>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={onDecrease}
+          disabled={value === 0}
+        >
           <MinusIcon />
         </Button>
         <Input

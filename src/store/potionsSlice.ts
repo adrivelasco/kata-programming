@@ -33,7 +33,9 @@ const potionsSlice = createSlice({
       state[index].quantity++;
     },
     decrease: (state, { payload: index }: PayloadAction<number>) => {
-      state[index].quantity--;
+      if (state[index].quantity > 0) {
+        state[index].quantity--;
+      }
     },
   },
 });
