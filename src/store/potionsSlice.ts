@@ -26,7 +26,7 @@ const initialState: Potion[] = [
 ];
 
 const potionsSlice = createSlice({
-  name: 'userPotions',
+  name: 'potions',
   initialState,
   reducers: {
     increment: (state, { payload: index }: PayloadAction<number>) => {

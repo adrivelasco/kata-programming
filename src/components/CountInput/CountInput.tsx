@@ -62,5 +62,5 @@ const getWidthLine = (value: number) => {
   if (value === 0) {
     return '5%';
   }
-  return value <= 10 ? `${value * 10}%` : '100%';
+  return value <= 5 ? `${value * 20}%` : '100%';
 };

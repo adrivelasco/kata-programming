@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import { resultsReducer } from './resultsSlice';
 import { potionsReducer } from './potionsSlice';
 
 export const store = configureStore({
   reducer: {
     potions: potionsReducer,
+    results: resultsReducer,
   },
 });
 

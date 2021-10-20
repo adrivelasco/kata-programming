@@ -6,7 +6,14 @@ import { Results } from '../Results';
 import { usePotionCalculator } from './usePotionCalculator';
 
 export const PotionCalculator = (props: FlexProps) => {
-  const { potions, onDecrement, onIncrement } = usePotionCalculator();
+  const {
+    onCalculateResults,
+    onClear,
+    onDecrement,
+    onIncrement,
+    potions,
+    results,
+  } = usePotionCalculator();
 
   return (
     <Flex as="main" pt={12} {...props}>
@@ -23,7 +30,11 @@ export const PotionCalculator = (props: FlexProps) => {
           );
         })}
       </Potions>
-      <Results />
+      <Results
+        onCalculateResults={onCalculateResults}
+        onClear={onClear}
+        data={results}
+      />
     </Flex>
   );
 };
