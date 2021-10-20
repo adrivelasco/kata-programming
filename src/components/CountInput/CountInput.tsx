@@ -47,7 +47,12 @@ export const CountInput = ({
           type="number"
           value={value}
         />
-        <Button size="sm" variant="outline" onClick={onIncrement}>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={onIncrement}
+          disabled={value === 5}
+        >
           <AddIcon />
         </Button>
       </Flex>
@@ -60,7 +65,7 @@ const getBgBorderLine = (color: string) => concat(color, '.300');
 
 const getWidthLine = (value: number) => {
   if (value === 0) {
-    return '5%';
+    return '10%';
   }
-  return value <= 5 ? `${value * 20}%` : '100%';
+  return `${value * 20}%`;
 };
